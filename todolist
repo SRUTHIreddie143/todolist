@@ -1,32 +1,25 @@
 class TodoList:
     def __init__(self):
         self.tasks = []
-
     def add_task(self, task):
         self.tasks.append(task)
-
     def view_tasks(self):
         for i, task in enumerate(self.tasks, start=1):
             print(f"{i}. {task}")
-
     def mark_completed(self, task_index):
         if 1 <= task_index <= len(self.tasks):
             self.tasks[task_index - 1] += " (completed)"
         else:
             print("Invalid task index")
-
 def main():
     todo_list = TodoList()
-
     while True:
         print("\nMenu:")
         print("1. Add Task")
         print("2. View Tasks")
         print("3. Mark Task as Completed")
         print("4. Quit")
-
         choice = input("Enter your choice: ")
-
         if choice == '1':
             task = input("Enter task: ")
             todo_list.add_task(task)
@@ -42,137 +35,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-def add(x, y):
-  return x + y
-
-def subtract(x, y):
-  return x - y
-
-def multiply(x, y):
-  return x * y
-
-def division(x, y):
-  return x / y
-
-num1 = int(input("enter the first num:"))
-num2 = int(input("enter the second num"))
-
-print("select the operation:")
-print("1. add")
-print("2. sub")
-print("3. multiply")
-print("4. division")
-
-operation = input("enter the operations of (1/2/3/4): ")
-
-if operation in ('1', '2', '3', '4'):
-  if operation == '1':
-    print(num1, "+", num2, "=", add(num1, num2))
-      elif operation == '2':
-    print(num1, "-", num2, "=", subtract(num1, num2))
-  elif operation == '3':
-    print(num1, "*", num2, "=", multiply(num1, num2))
-  elif operation == '4':
-    if num2 != 0:
-      print(num1, "/", num2, "=", division(num1, num2))
-    else:
-      print("error: division by  zero")
-else:
-  print("invalid input")
-
-import random
-import string
-def password_generation(length):
-  char = string.ascii_letters + string.digits + string.punctuation
-  password = ''.join(random.choice(char) for i in range(length))
-  return password
-
-def main():
-  try:
-    length = int(input("enter the desierd length of the password:"))
-    if length <= 0:
-      raise ValueError("length should be a positive integer.")
-
-    password = password_generation(length)
-    print(f"generated password: {password}")
-
-  except ValueError as ve:
-    print(f"Error: {ve}")
-  except Exception as e:
-    print(f"An unexpected error occured: {e}")
-
-if __name__ == "__main__":
-  main()
-
-import random
-
-def get_user_choice():
-  while True:
-    user_choice = input("choose rock, paper, or scissors:").lower()
-    if user_choice in ['rock', 'paper', 'scissors']:
-      return user_choice
-    else:
-      print("invalid input. please choose rock, paper, or scissors.")
-
-def get_computer_choice():
-  return random.choice(['rock', 'paper', 'scissors'])
-
-def determine_winner(user_choice, computer_choice):
-  if user_choice == computer_choice:
-    return "tie"
-  elif (user_choice == 'rock' and computer_choice == 'scissors' ):
-    return "you win!"
-    else:
-    return "you lose!"
-
-def play_round():
-  user_choice = get_user_choice()
-  computer_choice = get_computer_choice
-
-  print(f"you choose: {user_choice}")
-  print(f"the computer choose: {computer_choice}")
-
-  result = determine_winner(user_choice, computer_choice)
-  print(result)
-
-  return result
-
-def play_game():
-  user_score = 0
-  computer_score = 0
-
-  while True:
-    result = play_round()
-        if "win" in result:
-      user_score += 1
-    elif "lose" in result:
-      computer_score += 1
-      print(f"score = you: {user_score}, computer: {computer_score}")
-
-    play_again = input("do you want to play again? (yes/no):").lower()
-    if play_again != 'yes':
-      print("thanks for playing!")
-      break
-
-play_game()
-
-
-
-contact= {}
-while tune:
-  choice=int(input("1.add new contact \n 2.search contact \n 3.Display contact\n 4.Edit contact\n 5. delete contact\n 6. exit\n Enter your choice"))
-  if choice == 1:
-    name= input("ennter the contact name")
-    phone= input("enter mobile number")
-    contact[name]=phone
-    elif choice == 2:
-      search_name =input("enter the contact name")
-      if search_name in contact:
-        print(search_name,"s search contact number is ",contact)
-
-
-
-
-
